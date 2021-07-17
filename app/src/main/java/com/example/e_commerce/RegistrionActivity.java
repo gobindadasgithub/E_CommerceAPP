@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.FeatureGroupInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ public class RegistrionActivity extends AppCompatActivity {
 
     EditText name,password,mail;
     private FirebaseAuth auth;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +35,21 @@ public class RegistrionActivity extends AppCompatActivity {
         name=findViewById(R.id.edit_text_name);
         mail=findViewById(R.id.edit_text_email);
         password=findViewById(R.id.edit_text_password);
+
+
+        sharedPreferences=getSharedPreferences("onBoardingScreen",MODE_PRIVATE);
+        boolean isfirestTime=sharedPreferences.getBoolean("FirstTime",true);
+        if (isfirestTime){
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.putBoolean("First Time",false);
+            editor.commit();
+            Intent intent=new Intent(RegistrionActivity.this,OnBoardingActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+
         auth=FirebaseAuth.getInstance();
-
-
         if (auth.getCurrentUser()!=null){
             startActivity(new Intent(RegistrionActivity.this,MainActivity.class));
             finish();

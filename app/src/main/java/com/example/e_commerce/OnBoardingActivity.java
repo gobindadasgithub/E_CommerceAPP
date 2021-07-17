@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -46,6 +47,14 @@ public class OnBoardingActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(changeListener);
 
      addDosts(0);
+     btn.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             startActivity(new Intent(OnBoardingActivity.this,RegistrionActivity.class));
+             finish();
+
+         }
+     });
 
 
 
