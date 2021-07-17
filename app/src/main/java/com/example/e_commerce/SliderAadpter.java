@@ -35,11 +35,18 @@ public class SliderAadpter extends PagerAdapter {
 
     int handingarray[]={
 
+            R.string.fastslide,
+            R.string.secondslide,
+            R.string.thireslide
+
 
 
     };
 
     int descreptionarray[]={
+            R.string.descrepition,
+            R.string.descrepition,
+            R.string.descrepition
 
 
 

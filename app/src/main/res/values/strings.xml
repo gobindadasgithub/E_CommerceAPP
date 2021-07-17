@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">E_Commerce</string>
     <string name="Signup_name">"Don't Have An Account?"</string>
-    <string name="fastslide">"FastSlide"</string>
-    <string name="descrepition">"Descreption"</string>
+    <string name="fastslide">"Choose Your products"</string>
+    <string name="secondslide">"Fast Delivery"</string>
+    <string name="thireslide">"Good Service"</string>
+    <string name="descrepition">"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industrys standard dummy text ever since the
+
+        "</string>
 </resources>
